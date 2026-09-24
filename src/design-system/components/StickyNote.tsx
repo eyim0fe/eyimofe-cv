@@ -86,7 +86,7 @@ export const StickyNote: React.FC<StickyNoteProps> = ({
         }
         whileHover={!isSquishing ? { scale: 1.01, rotate: 0 } : undefined}
         whileDrag={!isSquishing ? { scale: 1.05, zIndex: 100 } : undefined}
-        className="absolute top-0 right-0 pointer-events-auto w-56 sm:w-60 p-4 rounded-xs select-none cursor-grab active:cursor-grabbing border text-left touch-none"
+        className="absolute top-0 right-0 pointer-events-auto w-44 sm:w-60 p-3 sm:p-4 rounded-xs select-none cursor-grab active:cursor-grabbing border text-left touch-none"
         style={{
           backgroundColor: styles.bg,
           borderColor: styles.border,
@@ -145,8 +145,8 @@ export const StickyNote: React.FC<StickyNoteProps> = ({
           ) : (
             <p
               onDoubleClick={() => setIsEditing(true)}
-              className="text-sm leading-relaxed cursor-grab active:cursor-grabbing min-h-[48px]"
-              style={{ fontFamily: '"Instrument Sans", sans-serif', fontSize: "14px", fontWeight: 500 }}
+              className="text-xs sm:text-sm leading-relaxed cursor-grab active:cursor-grabbing min-h-[40px] sm:min-h-[48px]"
+              style={{ fontFamily: '"Instrument Sans", sans-serif', fontWeight: 500 }}
               title="Drag to move · Double-click to edit text"
             >
               {text}

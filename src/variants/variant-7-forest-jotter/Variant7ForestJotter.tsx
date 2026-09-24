@@ -90,22 +90,6 @@ export function Variant7ForestJotter() {
       y: 0,
       author: 'Eyimofe (PM)',
     },
-    {
-      id: 'jotter-note-2',
-      text: 'Write documentation for Tsems',
-      color: 'peach',
-      x: -15,
-      y: 150,
-      author: 'Product Note',
-    },
-    {
-      id: 'jotter-note-3',
-      text: 'Cook Coconut Rice with Iced tea',
-      color: 'mint',
-      x: 10,
-      y: 300,
-      author: 'Personal',
-    },
   ])
 
   const addStickyNote = () => {
