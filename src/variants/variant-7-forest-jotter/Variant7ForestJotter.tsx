@@ -90,6 +90,22 @@ export function Variant7ForestJotter() {
       y: 0,
       author: 'Eyimofe (PM)',
     },
+    {
+      id: 'jotter-note-2',
+      text: 'Write documentation for Tsems',
+      color: 'peach',
+      x: -15,
+      y: 150,
+      author: 'Product Note',
+    },
+    {
+      id: 'jotter-note-3',
+      text: 'Cook Coconut Rice with Iced tea',
+      color: 'mint',
+      x: 10,
+      y: 300,
+      author: 'Personal',
+    },
   ])
 
   const addStickyNote = () => {
@@ -301,21 +317,22 @@ export function Variant7ForestJotter() {
       />
 
       {/* =========================================================================
-          STICKY NOTES CANVAS LAYER (Absolute per note - maintains independent positions)
+          STICKY NOTES CANVAS LAYER (Mobile: 1 note default, Desktop: 3 notes default)
          ========================================================================= */}
-      <div className="absolute top-24 right-6 sm:right-12 z-30 pointer-events-none w-56 sm:w-60 h-0">
-        {notes.map((note) => (
-          <StickyNote
-            key={note.id}
-            id={note.id}
-            initialText={note.text}
-            author={note.author}
-            color={note.color}
-            defaultX={note.x}
-            defaultY={note.y}
-            onDelete={() => deleteNote(note.id)}
-            isDraggable={true}
-          />
+      <div className="absolute top-24 right-6 sm:right-12 z-30 pointer-events-none w-44 sm:w-60 h-0">
+        {notes.map((note, idx) => (
+          <div key={note.id} className={idx >= 1 ? "hidden sm:block" : ""}>
+            <StickyNote
+              id={note.id}
+              initialText={note.text}
+              author={note.author}
+              color={note.color}
+              defaultX={note.x}
+              defaultY={note.y}
+              onDelete={() => deleteNote(note.id)}
+              isDraggable={true}
+            />
+          </div>
         ))}
       </div>
 
