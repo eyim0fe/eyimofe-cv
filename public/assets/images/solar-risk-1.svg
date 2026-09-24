@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="solar-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#18181B"/>
+      <stop offset="100%" stop-color="#27272A"/>
+    </linearGradient>
+    <pattern id="solar-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#3F3F46" stroke-width="0.75"/>
+    </pattern>
+  </defs>
+  
+  <rect width="1200" height="750" fill="url(#solar-bg)"/>
+  <rect width="1200" height="750" fill="url(#solar-grid)"/>
+
+  <!-- Top bar -->
+  <rect x="60" y="60" width="1080" height="50" rx="6" fill="#27272A" stroke="#52525B" stroke-width="1.5"/>
+  <circle cx="95" cy="85" r="7" fill="#EF4444"/>
+  <circle cx="118" cy="85" r="7" fill="#F59E0B"/>
+  <circle cx="141" cy="85" r="7" fill="#10B981"/>
+  <text x="180" y="90" font-family="'BIZ UDPMincho', Georgia, serif" font-size="14" fill="#A1A1AA">solarrisk.ai / prediction-engine-v2</text>
+
+  <!-- Left: Geographic & Solar Array Map -->
+  <rect x="60" y="130" width="560" height="560" rx="6" fill="#18181B" stroke="#3F3F46" stroke-width="1.5"/>
+  <text x="90" y="175" font-family="'BIZ UDPMincho', Georgia, serif" font-size="16" font-weight="bold" fill="#F4F4F5">SOLAR ARRAY RISK TELEMETRY</text>
+  
+  <!-- Heatmap simulation -->
+  <rect x="90" y="210" width="500" height="280" rx="6" fill="#27272A" stroke="#52525B"/>
+  <circle cx="190" cy="320" r="45" fill="#10B981" fill-opacity="0.35"/>
+  <circle cx="190" cy="320" r="15" fill="#10B981"/>
+  <text x="160" y="380" font-family="'BIZ UDPMincho', Georgia, serif" font-size="12" fill="#A1A1AA">Site Alpha (Low Risk)</text>
+
+  <circle cx="340" cy="280" r="65" fill="#EF4444" fill-opacity="0.35"/>
+  <circle cx="340" cy="280" r="20" fill="#EF4444"/>
+  <text x="290" y="370" font-family="'BIZ UDPMincho', Georgia, serif" font-size="12" fill="#FCA5A5">Site Beta (Thermal Degradation)</text>
+
+  <circle cx="490" cy="330" r="40" fill="#F59E0B" fill-opacity="0.35"/>
+  <circle cx="490" cy="330" r="14" fill="#F59E0B"/>
+  <text x="450" y="385" font-family="'BIZ UDPMincho', Georgia, serif" font-size="12" fill="#A1A1AA">Site Gamma (Inverter)</text>
+
+  <rect x="90" y="510" width="500" height="150" rx="6" fill="#27272A" stroke="#52525B"/>
+  <text x="115" y="545" font-family="'BIZ UDPMincho', Georgia, serif" font-size="12" font-weight="bold" fill="#F4F4F5">AI PREDICTION SUMMARY</text>
+  <text x="115" y="580" font-family="'BIZ UDPMincho', Georgia, serif" font-size="13" fill="#EF4444">● High Probability Failure in Sub-Array #4 within 14 Days</text>
+  <text x="115" y="615" font-family="'BIZ UDPMincho', Georgia, serif" font-size="13" fill="#34D399">● Preventive Maintenance Scheduled to avoid $42,000 Outage</text>
+
+  <!-- Right: Model Insights & Feature Weights -->
+  <rect x="640" y="130" width="500" height="560" rx="6" fill="#27272A" stroke="#3F3F46" stroke-width="1.5"/>
+  <text x="670" y="175" font-family="'BIZ UDPMincho', Georgia, serif" font-size="15" font-weight="bold" fill="#F4F4F5">RISK PROBABILITY MODEL (AI/ML)</text>
+
+  <rect x="670" y="210" width="440" height="80" rx="6" fill="#18181B" stroke="#52525B"/>
+  <text x="695" y="240" font-family="'BIZ UDPMincho', Georgia, serif" font-size="12" fill="#A1A1AA">Thermal Degradation Score</text>
+  <rect x="695" y="255" width="390" height="14" rx="4" fill="#3F3F46"/>
+  <rect x="695" y="255" width="320" height="14" rx="4" fill="#EF4444"/>
+  <text x="1040" y="267" font-family="'BIZ UDPMincho', Georgia, serif" font-size="12" font-weight="bold" fill="#FCA5A5">82%</text>
+
+  <rect x="670" y="305" width="440" height="80" rx="6" fill="#18181B" stroke="#52525B"/>
+  <text x="695" y="335" font-family="'BIZ UDPMincho', Georgia, serif" font-size="12" fill="#A1A1AA">Inverter Overload Risk</text>
+  <rect x="695" y="350" width="390" height="14" rx="4" fill="#3F3F46"/>
+  <rect x="695" y="350" width="180" height="14" rx="4" fill="#F59E0B"/>
+  <text x="1040" y="362" font-family="'BIZ UDPMincho', Georgia, serif" font-size="12" font-weight="bold" fill="#FCD34D">46%</text>
+
+  <rect x="670" y="400" width="440" height="80" rx="6" fill="#18181B" stroke="#52525B"/>
+  <text x="695" y="430" font-family="'BIZ UDPMincho', Georgia, serif" font-size="12" fill="#A1A1AA">Weather Resistance Factor</text>
+  <rect x="695" y="445" width="390" height="14" rx="4" fill="#3F3F46"/>
+  <rect x="695" y="445" width="360" height="14" rx="4" fill="#10B981"/>
+  <text x="1040" y="457" font-family="'BIZ UDPMincho', Georgia, serif" font-size="12" font-weight="bold" fill="#6EE7B7">92%</text>
+
+  <rect x="670" y="495" width="440" height="165" rx="6" fill="#18181B" stroke="#52525B"/>
+  <text x="695" y="530" font-family="'BIZ UDPMincho', Georgia, serif" font-size="12" font-weight="bold" fill="#F4F4F5">PRODUCT WORKFLOW IMPACT</text>
+  <text x="695" y="565" font-family="'BIZ UDPMincho', Georgia, serif" font-size="13" fill="#A1A1AA">1. Real-time sensory ingestion into Python backend</text>
+  <text x="695" y="600" font-family="'BIZ UDPMincho', Georgia, serif" font-size="13" fill="#A1A1AA">2. Multi-variate model surfaces early warning triggers</text>
+  <text x="695" y="635" font-family="'BIZ UDPMincho', Georgia, serif" font-size="13" fill="#10B981">3. Automated field technician dispatch via API</text>
+</svg>
