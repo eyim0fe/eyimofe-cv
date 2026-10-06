@@ -25,7 +25,7 @@ interface CustomNote {
   author: string
 }
 
-export function Variant7ForestJotter() {
+export function PortfolioPage() {
   const [isDark, setIsDark] = useState(false)
   const [whiteboardOpen, setWhiteboardOpen] = useState(false)
   const [toolsMenuOpen, setToolsMenuOpen] = useState(false)

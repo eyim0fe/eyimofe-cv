@@ -1,18 +1,7 @@
 import { RouterProvider, createBrowserRouter, Navigate } from "react-router-dom"
 import { MainLayout } from "./layouts/MainLayout"
-import { Variant7ForestJotter } from "./variants/variant-7-forest-jotter"
+import { PortfolioPage } from "./pages/PortfolioPage"
 
-/**
- * =========================================================================
- * ROUTING CONFIGURATION
- * =========================================================================
- * NOTE FOR EYIMOFE:
- * - Your portfolio is mounted at `/work`.
- * - Currently, the root route (`/`) redirects automatically to `/work`.
- * - When you are ready to build your personal homepage at `/`, replace the
- *   `<Navigate to="/work" replace />` below with your homepage component!
- * =========================================================================
- */
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,18 +9,15 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        // Redirect root "/" to "/work"
-        element: <Navigate to="/work" replace />
+        element: <PortfolioPage />
       },
       {
         path: "work",
-        // Portfolio mounted at "/work"
-        element: <Variant7ForestJotter />
+        element: <Navigate to="/" replace />
       },
       {
         path: "*",
-        // Fallback: any other page redirects to "/work"
-        element: <Navigate to="/work" replace />
+        element: <Navigate to="/" replace />
       }
     ]
   }
