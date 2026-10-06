@@ -10,6 +10,7 @@ export interface Project {
   isMobile?: boolean
   image: string
   liveUrl?: string
+  videoUrl?: string
   images: {
     src: string
     caption: string
@@ -219,6 +220,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       ],
       isMobile: false,
       image: '/assets/images/tnbc-1.png',
+      videoUrl: 'https://drive.google.com/file/d/1oHCW5fK53UUMcSuOmM0vl7GkCVccd7nw/view?usp=sharing',
       images: [
         {
           src: '/assets/images/tnbc-1.png',

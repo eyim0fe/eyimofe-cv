@@ -1,6 +1,6 @@
 import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowLeft, X, ChevronLeft, ChevronRight, Briefcase, Maximize2, ZoomIn } from "lucide-react"
+import { ArrowLeft, X, ChevronLeft, ChevronRight, Briefcase, Maximize2, ZoomIn, ArrowUpRight, Play, Video } from "lucide-react"
 import type { Project } from "@/data/portfolioData"
 
 interface ProjectCaseStudyDrawerProps {
@@ -15,6 +15,23 @@ interface ProjectCaseStudyDrawerProps {
     allImages?: { src: string; caption: string }[]
     currentIndex?: number
   }) => void
+}
+
+function getEmbedUrl(url?: string): string | null {
+  if (!url) return null
+  const ytMatch = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]+)/)
+  if (ytMatch && ytMatch[1]) {
+    return `https://www.youtube-nocookie.com/embed/${ytMatch[1]}`
+  }
+  const loomMatch = url.match(/loom\.com\/(?:share|embed)\/([a-zA-Z0-9]+)/)
+  if (loomMatch && loomMatch[1]) {
+    return `https://www.loom.com/embed/${loomMatch[1]}`
+  }
+  const driveMatch = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/)
+  if (driveMatch && driveMatch[1]) {
+    return `https://drive.google.com/file/d/${driveMatch[1]}/preview`
+  }
+  return null
 }
 
 export const ProjectCaseStudyDrawer: React.FC<ProjectCaseStudyDrawerProps> = ({
@@ -85,9 +102,11 @@ export const ProjectCaseStudyDrawer: React.FC<ProjectCaseStudyDrawerProps> = ({
               {/* Drawer Body Content */}
               <div className="p-6 sm:p-10 space-y-8 flex-1">
                 {/* Tagline */}
-                <p className="text-base sm:text-lg opacity-85 leading-relaxed">
-                  &ldquo;{activeDrawerProject.tagline}&rdquo;
-                </p>
+                <div className="space-y-3">
+                  <p className="text-base sm:text-lg opacity-85 leading-relaxed">
+                    &ldquo;{activeDrawerProject.tagline}&rdquo;
+                  </p>
+                </div>
 
                 {/* Multi-Image Gallery Showcase Container (Only rendered if project has images) */}
                 {activeDrawerProject.images && activeDrawerProject.images.length > 0 && (
@@ -189,6 +208,57 @@ export const ProjectCaseStudyDrawer: React.FC<ProjectCaseStudyDrawerProps> = ({
                           )
                         })}
                       </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Video Demo Walkthrough Section (Rendered when videoUrl exists) */}
+                {activeDrawerProject.videoUrl && (
+                  <div className="space-y-3 border-t border-[#E5DFD4] dark:border-[#27272D] pt-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 font-bold text-sm uppercase tracking-wider">
+                        <Video className="w-4 h-4 text-amber-700 dark:text-amber-400" />
+                        <span>Product Demo Walkthrough</span>
+                      </div>
+                      <a
+                        href={activeDrawerProject.videoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 font-sans text-xs font-semibold opacity-75 hover:opacity-100 underline underline-offset-4 cursor-pointer"
+                      >
+                        <span>Open in new tab</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+
+                    {getEmbedUrl(activeDrawerProject.videoUrl) ? (
+                      <div className="relative aspect-video w-full rounded-xl overflow-hidden border border-[#D5CEC5] dark:border-[#38383E] shadow-sm bg-black">
+                        <iframe
+                          src={getEmbedUrl(activeDrawerProject.videoUrl)!}
+                          title={`${activeDrawerProject.title} Video Demo`}
+                          className="w-full h-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                    ) : (
+                      <a
+                        href={activeDrawerProject.videoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between p-4 rounded-xl border border-[#D5CEC5] dark:border-[#38383E] bg-[#F9F6F0] dark:bg-[#1A1A1E] hover:bg-black/5 dark:hover:bg-white/5 transition-colors group"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-9 h-9 rounded-lg bg-black/5 dark:bg-white/10 text-neutral-800 dark:text-neutral-200 flex items-center justify-center">
+                            <Play className="w-4 h-4 fill-current" />
+                          </div>
+                          <div>
+                            <p className="font-sans font-bold text-sm">Watch Video Walkthrough</p>
+                            <p className="font-sans text-xs opacity-60">External video demonstration</p>
+                          </div>
+                        </div>
+                        <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </a>
                     )}
                   </div>
                 )}

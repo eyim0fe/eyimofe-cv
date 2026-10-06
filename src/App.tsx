@@ -1,7 +1,6 @@
 import { RouterProvider, createBrowserRouter, Navigate } from "react-router-dom"
 import { MainLayout } from "./layouts/MainLayout"
 import { PortfolioPage } from "./pages/PortfolioPage"
-import { FolderSandboxPage } from "./pages/FolderSandboxPage"
 
 const router = createBrowserRouter([
   {
@@ -14,7 +13,7 @@ const router = createBrowserRouter([
       },
       {
         path: "sandbox",
-        element: <FolderSandboxPage />
+        element: <Navigate to="/" replace />
       },
       {
         path: "work",

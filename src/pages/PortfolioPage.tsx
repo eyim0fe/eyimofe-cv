@@ -297,19 +297,11 @@ export function PortfolioPage() {
         </div>
       </aside>
 
-      {/* 2. Fixed Light Mode Toggle & Sandbox Link (Top Right on Mobile & Desktop) */}
+      {/* 2. Fixed Light Mode Toggle (Top Right on Mobile & Desktop) */}
       <aside
-        aria-label="Theme & Sandbox Controller"
-        className="fixed top-4 right-4 sm:right-6 z-40 flex items-center gap-1.5 p-1 rounded-full border border-[#D5CEC5] dark:border-[#38383E] bg-[#FAF7F0]/95 dark:bg-[#1C1C20]/95 backdrop-blur-md shadow-md"
+        aria-label="Theme Controller"
+        className="fixed top-4 right-4 sm:right-6 z-40 flex items-center p-1 rounded-full border border-[#D5CEC5] dark:border-[#38383E] bg-[#FAF7F0]/95 dark:bg-[#1C1C20]/95 backdrop-blur-md shadow-md"
       >
-        <Link
-          to="/sandbox"
-          className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-amber-500/15 hover:bg-amber-500/25 text-amber-900 dark:text-amber-300 text-xs font-bold transition-all"
-          title="Preview Folder Stacking Sandbox Prototype"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
-          <span className="hidden sm:inline">Folder Sandbox</span>
-        </Link>
         <CompactLampToggle
           isDark={isDark}
           onToggle={() => setIsDark(!isDark)}
@@ -345,12 +337,17 @@ export function PortfolioPage() {
         ))}
       </div>
 
-      {/* EXPANSIVE FULL-WIDTH JOTTER CONTAINER */}
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 xl:px-18 py-12 pb-36 space-y-18 relative z-10">
-        {/* 1. Profile & Bio Header */}
+      {/* =========================================================================
+          1. HERO PROFILE & BIO HEADER (7XL Container)
+         ========================================================================= */}
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 xl:px-18 pt-12 pb-6 relative z-10">
         <HeroProfileHeader profile={profile} />
+      </div>
 
-        {/* 2. Selected Work Grid */}
+      {/* =========================================================================
+          2. SELECTED WORK - FULL-WIDTH STACKED COLLAPSIBLE FOLDERS
+         ========================================================================= */}
+      <div className="w-full relative z-20 my-6">
         <SelectedWorkSection
           projects={projects}
           roleFilter={roleFilter}
@@ -358,11 +355,16 @@ export function PortfolioPage() {
           onOpenDrawer={openDrawer}
           onOpenFullscreenImage={setFullscreenImage}
         />
+      </div>
 
-        {/* 3. Career & Experience Timeline */}
+      {/* =========================================================================
+          3. CAREER TIMELINE, SKILLS SHOWCASE & JOTTER FOOTER (7XL Container)
+         ========================================================================= */}
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 xl:px-18 pt-8 pb-36 space-y-18 relative z-10">
+        {/* Career & Experience Timeline */}
         <CareerTimelineSection experience={profile.experience} />
 
-        {/* 4. Skills Showcase */}
+        {/* Skills Showcase */}
         <section id="skills-section">
           <SkillsShowcase />
         </section>
