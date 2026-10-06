@@ -14,7 +14,8 @@ import {
   type FullscreenImageState,
 } from '@/components/FullscreenLightboxModal'
 import { JotterFooter } from '@/components/JotterFooter'
-import { PenTool, Plus, Trash2, Wrench, X } from 'lucide-react'
+import { PenTool, Plus, Trash2, Wrench, X, Sparkles } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 interface CustomNote {
   id: string
@@ -296,11 +297,19 @@ export function PortfolioPage() {
         </div>
       </aside>
 
-      {/* 2. Fixed Light Mode Toggle (Top Right on Mobile & Desktop) */}
+      {/* 2. Fixed Light Mode Toggle & Sandbox Link (Top Right on Mobile & Desktop) */}
       <aside
-        aria-label="Theme Controller"
-        className="fixed top-4 right-4 sm:right-6 z-40 flex items-center p-1 rounded-full border border-[#D5CEC5] dark:border-[#38383E] bg-[#FAF7F0]/95 dark:bg-[#1C1C20]/95 backdrop-blur-md shadow-md"
+        aria-label="Theme & Sandbox Controller"
+        className="fixed top-4 right-4 sm:right-6 z-40 flex items-center gap-1.5 p-1 rounded-full border border-[#D5CEC5] dark:border-[#38383E] bg-[#FAF7F0]/95 dark:bg-[#1C1C20]/95 backdrop-blur-md shadow-md"
       >
+        <Link
+          to="/sandbox"
+          className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-amber-500/15 hover:bg-amber-500/25 text-amber-900 dark:text-amber-300 text-xs font-bold transition-all"
+          title="Preview Folder Stacking Sandbox Prototype"
+        >
+          <Sparkles className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
+          <span className="hidden sm:inline">Folder Sandbox</span>
+        </Link>
         <CompactLampToggle
           isDark={isDark}
           onToggle={() => setIsDark(!isDark)}
