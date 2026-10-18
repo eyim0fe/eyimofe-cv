@@ -95,7 +95,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     socials: [
       {
         name: 'LinkedIn',
-        url: 'https://linkedin.com/in/eyimofe-p',
+        url: 'https://www.linkedin.com/in/eyimofepinnick',
         icon: 'linkedin',
       },
       {
