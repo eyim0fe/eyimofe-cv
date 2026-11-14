@@ -29,3 +29,25 @@
     background: rgba(150, 150, 150, 0.5);
   }
 }
+
+/* Bimanshu Circular Ripple View Transition */
+::view-transition-old(lamp) {
+  display: none;
+}
+::view-transition-new(lamp) {
+  animation: none;
+}
+:root[data-vt="reveal"]::view-transition-old(root) {
+  animation: none;
+}
+:root[data-vt="reveal"]::view-transition-new(root) {
+  animation: theme-reveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes theme-reveal {
+  0% {
+    clip-path: circle(0 at var(--vt-x, 85%) var(--vt-y, 24px));
+  }
+  100% {
+    clip-path: circle(150vmax at var(--vt-x, 85%) var(--vt-y, 24px));
+  }
+}

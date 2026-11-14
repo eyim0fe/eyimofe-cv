@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { PORTFOLIO_DATA, type Project } from '@/data/portfolioData'
-import { CompactLampToggle } from '@/design-system/components/CreativeToggles/CompactLampToggle'
+import { AuthenticBimanshuLamp } from '@/design-system/components/CreativeToggles/AuthenticBimanshuLamp'
 import { StickyNote } from '@/design-system/components/StickyNote'
 import { WhiteboardCanvas } from '@/components/WhiteboardCanvas'
 import { HeroProfileHeader } from '@/components/HeroProfileHeader'
-import { SelectedWorkSection } from '@/components/SelectedWorkSection'
+import { BimanshuSelectedWork } from '@/components/BimanshuSelectedWork'
+import { ViewSwitcherPill } from '@/components/ViewSwitcherPill'
 import { CareerTimelineSection } from '@/components/CareerTimelineSection'
 import { SkillsShowcase } from '@/components/SkillsShowcase'
 import { ProjectCaseStudyDrawer } from '@/components/ProjectCaseStudyDrawer'
@@ -265,7 +266,7 @@ export function PortfolioPage() {
                     </span>
                   </div>
                   {notes.length > 0 && (
-                    <span className="px-2 py-0.5 rounded-full text-[10px] bg-red-500/20 text-red-700 dark:text-red-300 font-mono">
+                    <span className="px-2 py-0.5 rounded-full text-[10px] bg-red-500/20 text-red-700 dark:text-red-300 font-sans font-bold">
                       {notes.length}
                     </span>
                   )}
@@ -289,7 +290,7 @@ export function PortfolioPage() {
             </div>
             <span>Jotter Tools</span>
             {notes.length > 0 && (
-              <span className="px-1.5 py-0.2 rounded-full text-[10px] bg-amber-500/20 text-amber-800 dark:text-amber-300 font-mono">
+              <span className="px-1.5 py-0.2 rounded-full text-[10px] bg-amber-500/20 text-amber-800 dark:text-amber-300 font-sans font-bold">
                 {notes.length}
               </span>
             )}
@@ -297,14 +298,17 @@ export function PortfolioPage() {
         </div>
       </aside>
 
-      {/* 2. Fixed Light Mode Toggle (Top Right on Mobile & Desktop) */}
+      {/* Navigation View Switcher (Top Left) */}
+      <ViewSwitcherPill />
+
+      {/* 2. Authentic Bimanshu Hanging Ceiling Lamp (Moved more left from far right) */}
       <aside
         aria-label="Theme Controller"
-        className="fixed top-4 right-4 sm:right-6 z-40 flex items-center p-1 rounded-full border border-[#D5CEC5] dark:border-[#38383E] bg-[#FAF7F0]/95 dark:bg-[#1C1C20]/95 backdrop-blur-md shadow-md"
+        className="fixed top-0 right-14 sm:right-24 md:right-32 z-40"
       >
-        <CompactLampToggle
+        <AuthenticBimanshuLamp
           isDark={isDark}
-          onToggle={() => setIsDark(!isDark)}
+          onToggle={setIsDark}
         />
       </aside>
 
@@ -318,9 +322,9 @@ export function PortfolioPage() {
       />
 
       {/* =========================================================================
-          STICKY NOTES CANVAS LAYER (Mobile: 1 note default, Desktop: 3 notes default)
+          STICKY NOTES CANVAS LAYER (Moved to left of the screen as requested)
          ========================================================================= */}
-      <div className="absolute top-24 right-6 sm:right-12 z-30 pointer-events-none w-44 sm:w-60 h-0">
+      <div className="absolute top-28 left-6 sm:left-14 z-30 pointer-events-none w-44 sm:w-60 h-0">
         {notes.map((note, idx) => (
           <div key={note.id} className={idx >= 1 ? "hidden sm:block" : ""}>
             <StickyNote
@@ -345,14 +349,13 @@ export function PortfolioPage() {
       </div>
 
       {/* =========================================================================
-          2. SELECTED WORK - FULL-WIDTH STACKED COLLAPSIBLE FOLDERS
+          2. SELECTED WORK - BIMANSHU EDITORIAL CARDS
          ========================================================================= */}
-      <div className="w-full relative z-20 my-6">
-        <SelectedWorkSection
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 xl:px-18 relative z-20 my-6">
+        <BimanshuSelectedWork
           projects={projects}
           roleFilter={roleFilter}
           onSetRoleFilter={setRoleFilter}
-          onOpenDrawer={openDrawer}
           onOpenFullscreenImage={setFullscreenImage}
         />
       </div>

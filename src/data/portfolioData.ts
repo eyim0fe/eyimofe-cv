@@ -77,7 +77,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     title: 'Product Manager who codes for fun',
     location: 'Lagos & Remote',
     localTimezone: 'Africa/Lagos',
-    avatar: '/assets/images/profile.jpeg',
+    avatar: '/assets/images/profile.png',
     bio: {
       headline:
         'Leading products from 0 to 1, building cool stuff on the weekends.',
@@ -220,7 +220,8 @@ export const PORTFOLIO_DATA: PortfolioData = {
       ],
       isMobile: false,
       image: '/assets/images/tnbc-1.png',
-      videoUrl: 'https://drive.google.com/file/d/1oHCW5fK53UUMcSuOmM0vl7GkCVccd7nw/view?usp=sharing',
+      videoUrl:
+        'https://drive.google.com/file/d/1oHCW5fK53UUMcSuOmM0vl7GkCVccd7nw/view?usp=sharing',
       images: [
         {
           src: '/assets/images/tnbc-1.png',
@@ -261,39 +262,39 @@ export const PORTFOLIO_DATA: PortfolioData = {
         ],
       },
     },
-    {
-      id: 'praxis',
-      title: 'Praxis',
-      tagline:
-        'Organizational operating system for managing employees, work, communication, performance, and day-to-day operations.',
-      roleLabel: 'Product Manager',
-      roleDescription:
-        'Led product direction and delivery, translating organizational needs into product requirements, user flows, and actionable features while working closely with design and engineering.',
-      period: '2024',
-      metrics: '',
-      stack: [],
-      isMobile: false,
-      image: '/assets/images/praxis-1.svg',
-      images: [
-        {
-          src: '/assets/images/praxis-1.svg',
-          caption:
-            'Screen 1: Praxis Centralized Workforce & Operational Dashboard',
-        },
-      ],
-      caseStudy: {
-        problem:
-          'Organizations relied on fragmented tools and workflows to manage employees and day-to-day operations, creating inefficiencies and disconnected information.',
-        solution:
-          'Built a centralized operating system that brings key organizational workflows into one platform.',
-        myImpact: [
-          'Defined product requirements, user stories, and feature priorities',
-          'Managed backlog, sprint planning, design reviews, QA, and delivery',
-          'Identified product issues and worked with designers to improve the design system',
-          'Collaborated with engineering to translate requirements into production features',
-        ],
-      },
-    },
+    // {
+    //   id: 'praxis',
+    //   title: 'Praxis',
+    //   tagline:
+    //     'Organizational operating system for managing employees, work, communication, performance, and day-to-day operations.',
+    //   roleLabel: 'Product Manager',
+    //   roleDescription:
+    //     'Led product direction and delivery, translating organizational needs into product requirements, user flows, and actionable features while working closely with design and engineering.',
+    //   period: '2024',
+    //   metrics: '',
+    //   stack: [],
+    //   isMobile: false,
+    //   image: '/assets/images/praxis-1.svg',
+    //   images: [
+    //     {
+    //       src: '/assets/images/praxis-1.svg',
+    //       caption:
+    //         'Screen 1: Praxis Centralized Workforce & Operational Dashboard',
+    //     },
+    //   ],
+    //   caseStudy: {
+    //     problem:
+    //       'Organizations relied on fragmented tools and workflows to manage employees and day-to-day operations, creating inefficiencies and disconnected information.',
+    //     solution:
+    //       'Built a centralized operating system that brings key organizational workflows into one platform.',
+    //     myImpact: [
+    //       'Defined product requirements, user stories, and feature priorities',
+    //       'Managed backlog, sprint planning, design reviews, QA, and delivery',
+    //       'Identified product issues and worked with designers to improve the design system',
+    //       'Collaborated with engineering to translate requirements into production features',
+    //     ],
+    //   },
+    // },
     {
       id: 'tsems',
       title: 'Tsems',

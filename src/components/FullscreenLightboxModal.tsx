@@ -146,7 +146,7 @@ export const FullscreenLightboxModal: React.FC<FullscreenLightboxModalProps> = (
                 )}
               </div>
               {fullscreenImage.allImages && fullscreenImage.allImages.length > 1 && (
-                <span className="opacity-60 text-xs shrink-0 font-mono">
+                <span className="opacity-60 text-xs shrink-0 font-sans font-bold">
                   {(fullscreenImage.currentIndex ?? 0) + 1} / {fullscreenImage.allImages.length}
                 </span>
               )}

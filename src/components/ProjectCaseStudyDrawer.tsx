@@ -132,7 +132,7 @@ export const ProjectCaseStudyDrawer: React.FC<ProjectCaseStudyDrawerProps> = ({
                       />
 
                       {/* Top Right Counter Badge (1 / 5) */}
-                      <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 dark:bg-black/80 text-white text-xs font-semibold font-mono tracking-wider backdrop-blur-sm z-10 shadow-md">
+                      <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-900/80 dark:bg-black/80 text-white text-xs font-bold font-sans tracking-wider backdrop-blur-sm z-10 shadow-md">
                         {activeImageIndex + 1} / {activeDrawerProject.images.length}
                       </div>
 
