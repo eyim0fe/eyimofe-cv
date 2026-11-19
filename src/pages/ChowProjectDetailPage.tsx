@@ -15,11 +15,11 @@ import {
 } from 'lucide-react'
 import { PORTFOLIO_DATA, type Project } from '@/data/portfolioData'
 import { AuthenticBimanshuLamp } from '@/design-system/components/CreativeToggles/AuthenticBimanshuLamp'
-import { ViewSwitcherPill } from '@/components/ViewSwitcherPill'
 import {
   FullscreenLightboxModal,
   type FullscreenImageState,
 } from '@/components/FullscreenLightboxModal'
+import { TraceDeepDiveCaseStudy } from '@/components/TraceDeepDiveCaseStudy'
 
 function getEmbedUrl(url?: string): string | null {
   if (!url) return null
@@ -120,9 +120,6 @@ export function ChowProjectDetailPage() {
         }
       `}</style>
 
-      {/* TOP VIEW SWITCHER PILL (Jotter vs Chow) */}
-      <ViewSwitcherPill />
-
       {/* AUTHENTIC BIMANSHU HANGING LAMP (Exact same physics lamp fixture as Jotter) */}
       <aside
         aria-label="Theme Controller"
@@ -171,13 +168,21 @@ export function ChowProjectDetailPage() {
            ========================================================================= */}
         <header className="space-y-6">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3.5 py-1 rounded-full border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-[#1B4332] text-white dark:bg-[#2D6A4F] font-extrabold text-xs uppercase tracking-wider shadow-[2px_2px_0_#0E2233] dark:shadow-[2px_2px_0_#143829]">
-              {project.roleLabel}
-            </span>
-            <span className="px-3 py-1 rounded-full border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-[#E8F5E9] text-[#1B4332] dark:bg-[#0A3D42] dark:text-[#D8F3DC] font-extrabold text-xs tracking-wider shadow-[2px_2px_0_#0E2233] dark:shadow-[2px_2px_0_#143829] flex items-center gap-1.5">
-              <Rocket className="w-3.5 h-3.5" />
-              <span>Shipped to Production</span>
-            </span>
+            {project.id === 'trace' ? (
+              <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#1B4332] dark:text-[#52B788]">
+                PRODUCT MANAGEMENT · SABI · APRIL 2024 – JULY 2025
+              </span>
+            ) : (
+              <>
+                <span className="px-3.5 py-1 rounded-full border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-[#1B4332] text-white dark:bg-[#2D6A4F] font-extrabold text-xs uppercase tracking-wider shadow-[2px_2px_0_#0E2233] dark:shadow-[2px_2px_0_#143829]">
+                  {project.roleLabel}
+                </span>
+                <span className="px-3 py-1 rounded-full border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-[#E8F5E9] text-[#1B4332] dark:bg-[#0A3D42] dark:text-[#D8F3DC] font-extrabold text-xs tracking-wider shadow-[2px_2px_0_#0E2233] dark:shadow-[2px_2px_0_#143829] flex items-center gap-1.5">
+                  <Rocket className="w-3.5 h-3.5" />
+                  <span>Shipped to Production</span>
+                </span>
+              </>
+            )}
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[0.98] text-[#0E2233] dark:text-white">
@@ -187,6 +192,12 @@ export function ChowProjectDetailPage() {
           <p className="text-xl sm:text-2xl font-bold leading-relaxed text-neutral-800 dark:text-[#CBD5E1] max-w-3xl">
             {project.tagline}
           </p>
+
+          {project.id === 'trace' && (
+            <p className="text-base sm:text-lg font-medium text-neutral-600 dark:text-[#CBD5E1] max-w-3xl">
+              Trace was a mineral trading platform designed to connect suppliers, laboratories, logistics operators, and buyers in one place.
+            </p>
+          )}
 
           {/* Action Links */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -215,99 +226,103 @@ export function ChowProjectDetailPage() {
         </header>
 
         {/* =========================================================================
-            2. EDITORIAL CONTEXT NARRATIVE (Clean ring-bullet format)
+            2. EDITORIAL CONTEXT NARRATIVE OR DEDICATED PM DEEP DIVE
            ========================================================================= */}
-        <section className="space-y-10 pt-4">
-          {/* 1. The Operational Problem */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="w-3.5 h-3.5 rounded-full border-2 border-[#1B4332] dark:border-[#52B788] bg-transparent inline-block shrink-0" />
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
-                The Operational Problem
-              </h2>
+        {project.id === 'trace' ? (
+          <TraceDeepDiveCaseStudy />
+        ) : (
+          <section className="space-y-10 pt-4">
+            {/* 1. The Operational Problem */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="w-3.5 h-3.5 rounded-full border-2 border-[#1B4332] dark:border-[#52B788] bg-transparent inline-block shrink-0" />
+                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
+                  The Operational Problem
+                </h2>
+              </div>
+              <p className="text-base sm:text-lg leading-relaxed font-medium text-neutral-800 dark:text-[#CBD5E1] pl-6 border-l-2 border-[#0E2233]/15 dark:border-white/15">
+                {project.caseStudy.problem}
+              </p>
             </div>
-            <p className="text-base sm:text-lg leading-relaxed font-medium text-neutral-800 dark:text-[#CBD5E1] pl-6 border-l-2 border-[#0E2233]/15 dark:border-white/15">
-              {project.caseStudy.problem}
-            </p>
-          </div>
 
-          {/* 2. The Product Solution */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="w-3.5 h-3.5 rounded-full border-2 border-[#1B4332] dark:border-[#52B788] bg-transparent inline-block shrink-0" />
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
-                The Product Solution
-              </h2>
+            {/* 2. The Product Solution */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="w-3.5 h-3.5 rounded-full border-2 border-[#1B4332] dark:border-[#52B788] bg-transparent inline-block shrink-0" />
+                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
+                  The Product Solution
+                </h2>
+              </div>
+              <p className="text-base sm:text-lg leading-relaxed font-medium text-neutral-800 dark:text-[#CBD5E1] pl-6 border-l-2 border-[#0E2233]/15 dark:border-white/15">
+                {project.caseStudy.solution}
+              </p>
             </div>
-            <p className="text-base sm:text-lg leading-relaxed font-medium text-neutral-800 dark:text-[#CBD5E1] pl-6 border-l-2 border-[#0E2233]/15 dark:border-white/15">
-              {project.caseStudy.solution}
-            </p>
-          </div>
 
-          {/* 3. Role, Ownership & Delivery */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="w-3.5 h-3.5 rounded-full border-2 border-[#1B4332] dark:border-[#52B788] bg-transparent inline-block shrink-0" />
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
-                Role, Ownership & Delivery
-              </h2>
-            </div>
-            <p className="text-base sm:text-lg leading-relaxed font-medium text-neutral-800 dark:text-[#CBD5E1] pl-6 border-l-2 border-[#0E2233]/15 dark:border-white/15">
-              <strong className="text-[#0E2233] dark:text-white">
-                {project.roleLabel}
-              </strong>{' '}
-              — {project.roleDescription}
-            </p>
-          </div>
-
-          {/* 4. Core Architecture & Tech Stack */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="w-3.5 h-3.5 rounded-full border-2 border-[#1B4332] dark:border-[#52B788] bg-transparent inline-block shrink-0" />
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
-                Core Architecture & Tech Stack
-              </h2>
-            </div>
-            <div className="flex flex-wrap items-center gap-2 pl-6">
-              {project.stack.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3.5 py-1.5 rounded-full border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-white dark:bg-[#122436] text-[#0E2233] dark:text-[#EAF1F8] font-extrabold text-xs shadow-[2px_2px_0_#0E2233] dark:shadow-[2px_2px_0_#143829]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* 5. The 0-to-1 PM Execution */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="w-3.5 h-3.5 rounded-full border-2 border-[#1B4332] dark:border-[#52B788] bg-transparent inline-block shrink-0" />
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
-                The 0-to-1 PM Execution
-              </h2>
-            </div>
-            <div className="text-base sm:text-lg leading-relaxed font-medium text-neutral-800 dark:text-[#CBD5E1] pl-6 border-l-2 border-[#0E2233]/15 dark:border-white/15 space-y-3">
-              <p>
-                When tackling{' '}
+            {/* 3. Role, Ownership & Delivery */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="w-3.5 h-3.5 rounded-full border-2 border-[#1B4332] dark:border-[#52B788] bg-transparent inline-block shrink-0" />
+                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
+                  Role, Ownership & Delivery
+                </h2>
+              </div>
+              <p className="text-base sm:text-lg leading-relaxed font-medium text-neutral-800 dark:text-[#CBD5E1] pl-6 border-l-2 border-[#0E2233]/15 dark:border-white/15">
                 <strong className="text-[#0E2233] dark:text-white">
-                  {project.title}
-                </strong>
-                , the primary hurdle was reconciling fragmented manual processes
-                into a unified system that teammates would naturally adopt
-                without extensive retraining.
-              </p>
-              <p>
-                By driving discovery interviews, scoping clear acceptance
-                criteria in weekly PRDs, and orchestrating rapid builds with
-                React 19, FastAPI, and automated pipelines, we decoupled
-                operational complexity and provided real-time visibility into
-                mission-critical workflows.
+                  {project.roleLabel}
+                </strong>{' '}
+                — {project.roleDescription}
               </p>
             </div>
-          </div>
-        </section>
+
+            {/* 4. Core Architecture & Tech Stack */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="w-3.5 h-3.5 rounded-full border-2 border-[#1B4332] dark:border-[#52B788] bg-transparent inline-block shrink-0" />
+                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
+                  Core Architecture & Tech Stack
+                </h2>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 pl-6">
+                {project.stack.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3.5 py-1.5 rounded-full border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-white dark:bg-[#122436] text-[#0E2233] dark:text-[#EAF1F8] font-extrabold text-xs shadow-[2px_2px_0_#0E2233] dark:shadow-[2px_2px_0_#143829]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* 5. The 0-to-1 PM Execution */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="w-3.5 h-3.5 rounded-full border-2 border-[#1B4332] dark:border-[#52B788] bg-transparent inline-block shrink-0" />
+                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
+                  The 0-to-1 PM Execution
+                </h2>
+              </div>
+              <div className="text-base sm:text-lg leading-relaxed font-medium text-neutral-800 dark:text-[#CBD5E1] pl-6 border-l-2 border-[#0E2233]/15 dark:border-white/15 space-y-3">
+                <p>
+                  When tackling{' '}
+                  <strong className="text-[#0E2233] dark:text-white">
+                    {project.title}
+                  </strong>
+                  , the primary hurdle was reconciling fragmented manual processes
+                  into a unified system that teammates would naturally adopt
+                  without extensive retraining.
+                </p>
+                <p>
+                  By driving discovery interviews, scoping clear acceptance
+                  criteria in weekly PRDs, and orchestrating rapid builds with
+                  React 19, FastAPI, and automated pipelines, we decoupled
+                  operational complexity and provided real-time visibility into
+                  mission-critical workflows.
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* =========================================================================
             3. EMBEDDED DEMO VIDEO WALKTHROUGH
@@ -334,9 +349,9 @@ export function ChowProjectDetailPage() {
         )}
 
         {/* =========================================================================
-            4. SCREENSHOT CAROUSEL SHOWCASE
+            4. SCREENSHOT CAROUSEL SHOWCASE (Hidden if project has no real screenshots)
            ========================================================================= */}
-        {hasImages && project.images && (
+        {project.id !== 'trace' && hasImages && project.images && (
           <section className="space-y-4 pt-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-2">

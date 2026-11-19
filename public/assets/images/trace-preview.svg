@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="trace-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0E2233"/>
+      <stop offset="50%" stop-color="#122436"/>
+      <stop offset="100%" stop-color="#1B4332"/>
+    </linearGradient>
+    <pattern id="trace-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2D6A4F" stroke-width="0.75" stroke-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="750" fill="url(#trace-bg)"/>
+  <rect width="1200" height="750" fill="url(#trace-grid)"/>
+
+  <!-- Window Frame -->
+  <rect x="50" y="45" width="1100" height="52" rx="14" fill="#091522" stroke="#2D6A4F" stroke-width="2"/>
+  <circle cx="85" cy="71" r="7" fill="#EF4444"/>
+  <circle cx="108" cy="71" r="7" fill="#F59E0B"/>
+  <circle cx="131" cy="71" r="7" fill="#10B981"/>
+  <rect x="165" y="57" width="420" height="28" rx="6" fill="#122436" stroke="#2D6A4F" stroke-width="1"/>
+  <text x="180" y="76" font-family="'Satoshi', sans-serif" font-size="12" font-weight="700" fill="#D8F3DC">sabi.am / trace / mineral-trading-platform</text>
+
+  <rect x="980" y="57" width="150" height="28" rx="14" fill="#1B4332" stroke="#52B788" stroke-width="1.5"/>
+  <text x="1000" y="76" font-family="'Satoshi', sans-serif" font-size="11" font-weight="800" fill="#52B788">● HOW IT WORKS</text>
+
+  <!-- Main Canvas Board -->
+  <rect x="50" y="115" width="1100" height="585" rx="16" fill="#091522" stroke="#2D6A4F" stroke-width="2.5"/>
+
+  <!-- Left: 6 Roles Flow -->
+  <rect x="80" y="145" width="620" height="525" rx="12" fill="#122436" stroke="#2D6A4F" stroke-width="1.5"/>
+  <text x="105" y="180" font-family="'Satoshi', sans-serif" font-size="12" font-weight="900" fill="#52B788" letter-spacing="1.5">TRACE MINERAL TRADING</text>
+  <text x="105" y="210" font-family="'Satoshi', sans-serif" font-size="20" font-weight="900" fill="#FFFFFF">How the 6 Roles Work Together</text>
+
+  <!-- Row 1 -->
+  <!-- 1. Supplier -->
+  <rect x="105" y="240" width="165" height="95" rx="10" fill="#091522" stroke="#2D6A4F" stroke-width="2"/>
+  <circle cx="130" cy="265" r="10" fill="#1B4332" stroke="#52B788" stroke-width="1.5"/>
+  <text x="127" y="269" font-family="'Satoshi', sans-serif" font-size="10" font-weight="900" fill="#52B788">1</text>
+  <text x="150" y="270" font-family="'Satoshi', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">Supplier</text>
+  <text x="115" y="295" font-family="'Satoshi', sans-serif" font-size="11" font-weight="600" fill="#94A3B8">Lists minerals</text>
+  <text x="115" y="315" font-family="'Satoshi', sans-serif" font-size="10" font-weight="700" fill="#52B788">Requests a test</text>
+
+  <!-- Arrow 1->2 -->
+  <path d="M 270 288 L 315 288" stroke="#52B788" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="315,284 323,288 315,292" fill="#52B788"/>
+
+  <!-- 2. Sampler -->
+  <rect x="325" y="240" width="165" height="95" rx="10" fill="#091522" stroke="#2D6A4F" stroke-width="2"/>
+  <circle cx="350" cy="265" r="10" fill="#1B4332" stroke="#52B788" stroke-width="1.5"/>
+  <text x="347" y="269" font-family="'Satoshi', sans-serif" font-size="10" font-weight="900" fill="#52B788">2</text>
+  <text x="370" y="270" font-family="'Satoshi', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">Sampler</text>
+  <text x="335" y="295" font-family="'Satoshi', sans-serif" font-size="11" font-weight="600" fill="#94A3B8">Takes samples</text>
+  <text x="335" y="315" font-family="'Satoshi', sans-serif" font-size="10" font-weight="700" fill="#52B788">Seals sample bags</text>
+
+  <!-- Arrow 2->3 -->
+  <path d="M 490 288 L 525 288" stroke="#52B788" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="525,284 533,288 525,292" fill="#52B788"/>
+
+  <!-- 3. Laboratory -->
+  <rect x="535" y="240" width="145" height="95" rx="10" fill="#091522" stroke="#2D6A4F" stroke-width="2"/>
+  <circle cx="558" cy="265" r="10" fill="#1B4332" stroke="#52B788" stroke-width="1.5"/>
+  <text x="555" y="269" font-family="'Satoshi', sans-serif" font-size="10" font-weight="900" fill="#52B788">3</text>
+  <text x="578" y="270" font-family="'Satoshi', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">Lab</text>
+  <text x="545" y="295" font-family="'Satoshi', sans-serif" font-size="11" font-weight="600" fill="#94A3B8">Tests quality</text>
+  <text x="545" y="315" font-family="'Satoshi', sans-serif" font-size="10" font-weight="700" fill="#52B788">Uploads results</text>
+
+  <!-- Downward connector -->
+  <path d="M 610 335 L 610 375 L 187 375 L 187 400" stroke="#52B788" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+  <polygon points="183,400 187,408 191,400" fill="#52B788"/>
+
+  <!-- Row 2 -->
+  <!-- 4. Delivery Tracker -->
+  <rect x="105" y="410" width="165" height="95" rx="10" fill="#091522" stroke="#2D6A4F" stroke-width="2"/>
+  <circle cx="130" cy="435" r="10" fill="#1B4332" stroke="#52B788" stroke-width="1.5"/>
+  <text x="127" y="439" font-family="'Satoshi', sans-serif" font-size="10" font-weight="900" fill="#52B788">4</text>
+  <text x="150" y="440" font-family="'Satoshi', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">Trucker</text>
+  <text x="115" y="465" font-family="'Satoshi', sans-serif" font-size="11" font-weight="600" fill="#94A3B8">Tracks the load</text>
+  <text x="115" y="485" font-family="'Satoshi', sans-serif" font-size="10" font-weight="700" fill="#52B788">Checks scale slips</text>
+
+  <!-- Arrow 4->5 -->
+  <path d="M 270 458 L 315 458" stroke="#52B788" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="315,454 323,458 315,462" fill="#52B788"/>
+
+  <!-- 5. Meta-Aggregator -->
+  <rect x="325" y="410" width="165" height="95" rx="10" fill="#091522" stroke="#2D6A4F" stroke-width="2"/>
+  <circle cx="350" cy="435" r="10" fill="#1B4332" stroke="#52B788" stroke-width="1.5"/>
+  <text x="347" y="439" font-family="'Satoshi', sans-serif" font-size="10" font-weight="900" fill="#52B788">5</text>
+  <text x="370" y="440" font-family="'Satoshi', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">Buyer</text>
+  <text x="335" y="465" font-family="'Satoshi', sans-serif" font-size="11" font-weight="600" fill="#94A3B8">Signs contract</text>
+  <text x="335" y="485" font-family="'Satoshi', sans-serif" font-size="10" font-weight="700" fill="#52B788">Puts money in escrow</text>
+
+  <!-- Arrow 5->6 -->
+  <path d="M 490 458 L 525 458" stroke="#52B788" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="525,454 533,458 525,462" fill="#52B788"/>
+
+  <!-- 6. Admin Control Center -->
+  <rect x="535" y="410" width="145" height="95" rx="10" fill="#091522" stroke="#2D6A4F" stroke-width="2"/>
+  <circle cx="558" cy="435" r="10" fill="#1B4332" stroke="#52B788" stroke-width="1.5"/>
+  <text x="555" y="439" font-family="'Satoshi', sans-serif" font-size="10" font-weight="900" fill="#52B788">6</text>
+  <text x="578" y="440" font-family="'Satoshi', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">Admin</text>
+  <text x="545" y="465" font-family="'Satoshi', sans-serif" font-size="11" font-weight="600" fill="#94A3B8">Approves users</text>
+  <text x="545" y="485" font-family="'Satoshi', sans-serif" font-size="10" font-weight="700" fill="#52B788">Releases payment</text>
+
+  <!-- Bottom Banner -->
+  <rect x="105" y="535" width="575" height="110" rx="10" fill="#091522" stroke="#2D6A4F" stroke-width="1.5"/>
+  <text x="130" y="565" font-family="'Satoshi', sans-serif" font-size="11" font-weight="800" fill="#52B788">WHAT IT REPLACED</text>
+  <text x="130" y="590" font-family="'Satoshi', sans-serif" font-size="13" font-weight="700" fill="#E2E8F0">Lithium · Zinc · Lead · Copper Trading</text>
+  <text x="130" y="618" font-family="'Satoshi', sans-serif" font-size="12" font-weight="500" fill="#94A3B8">Replaced lost paper slips, fake lab results, and risky cash deals with clear digital proof.</text>
+
+  <!-- Right: The 5 Modules -->
+  <rect x="725" y="145" width="395" height="525" rx="12" fill="#122436" stroke="#2D6A4F" stroke-width="1.5"/>
+  <text x="750" y="180" font-family="'Satoshi', sans-serif" font-size="12" font-weight="900" fill="#52B788" letter-spacing="1.5">5 PRODUCT MODULES</text>
+  <text x="750" y="210" font-family="'Satoshi', sans-serif" font-size="18" font-weight="900" fill="#FFFFFF">How the Platform is Built</text>
+
+  <!-- Module 1 -->
+  <rect x="750" y="235" width="345" height="68" rx="8" fill="#091522" stroke="#2D6A4F" stroke-width="1"/>
+  <text x="770" y="260" font-family="'Satoshi', sans-serif" font-size="13" font-weight="800" fill="#52B788">1. Inventory &amp; Listings</text>
+  <text x="770" y="282" font-family="'Satoshi', sans-serif" font-size="11.5" font-weight="500" fill="#CBD5E1">Sellers list what they have, how much it weighs, and where it is.</text>
+
+  <!-- Module 2 -->
+  <rect x="750" y="315" width="345" height="68" rx="8" fill="#091522" stroke="#2D6A4F" stroke-width="1"/>
+  <text x="770" y="340" font-family="'Satoshi', sans-serif" font-size="13" font-weight="800" fill="#52B788">2. Quality Testing &amp; Certificates</text>
+  <text x="770" y="362" font-family="'Satoshi', sans-serif" font-size="11.5" font-weight="500" fill="#CBD5E1">Samplers seal samples; labs test them and upload official certificates.</text>
+
+  <!-- Module 3 -->
+  <rect x="750" y="395" width="345" height="68" rx="8" fill="#091522" stroke="#2D6A4F" stroke-width="1"/>
+  <text x="770" y="420" font-family="'Satoshi', sans-serif" font-size="13" font-weight="800" fill="#52B788">3. Digital Contracts</text>
+  <text x="770" y="442" font-family="'Satoshi', sans-serif" font-size="11.5" font-weight="500" fill="#CBD5E1">Agreed prices and delivery rules signed directly on the platform.</text>
+
+  <!-- Module 4 -->
+  <rect x="750" y="475" width="345" height="68" rx="8" fill="#091522" stroke="#2D6A4F" stroke-width="1"/>
+  <text x="770" y="500" font-family="'Satoshi', sans-serif" font-size="13" font-weight="800" fill="#52B788">4. Delivery Tracking</text>
+  <text x="770" y="522" font-family="'Satoshi', sans-serif" font-size="11.5" font-weight="500" fill="#CBD5E1">Tracks trucks carrying minerals and checks scale weight receipts.</text>
+
+  <!-- Module 5 -->
+  <rect x="750" y="555" width="345" height="68" rx="8" fill="#091522" stroke="#2D6A4F" stroke-width="1"/>
+  <text x="770" y="580" font-family="'Satoshi', sans-serif" font-size="13" font-weight="800" fill="#52B788">5. Payments &amp; Wallets</text>
+  <text x="770" y="602" font-family="'Satoshi', sans-serif" font-size="11.5" font-weight="500" fill="#CBD5E1">Holds funds in escrow and pays out when goods arrive verified.</text>
+
+  <rect x="750" y="635" width="345" height="30" rx="6" fill="#1B4332" stroke="#52B788" stroke-width="1"/>
+  <text x="770" y="655" font-family="'Satoshi', sans-serif" font-size="11" font-weight="800" fill="#D8F3DC">Junior PM · Sabi · Apr 2024 – Jul 2025</text>
+</svg>

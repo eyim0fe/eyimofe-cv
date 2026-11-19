@@ -22,7 +22,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { PORTFOLIO_DATA } from '@/data/portfolioData'
 import { ChowStickyNote } from '@/components/ChowStickyNote'
 import { ChowWhiteboardCanvas } from '@/components/ChowWhiteboardCanvas'
-import { ViewSwitcherPill } from '@/components/ViewSwitcherPill'
 import { GithubIcon, LinkedinIcon } from '@/components/SocialIcons'
 import { HeroPenCanvas } from '@/components/HeroPenCanvas'
 import { AuthenticBimanshuLamp } from '@/design-system/components/CreativeToggles/AuthenticBimanshuLamp'
@@ -201,9 +200,6 @@ export function ChowPortfolioPage() {
           box-shadow: 1px 1px 0 #0E2233;
         }
       `}</style>
-
-      {/* TOP VIEW SWITCHER PILL (Jotter vs Chow) */}
-      <ViewSwitcherPill />
 
       {/* AUTHENTIC BIMANSHU HANGING LAMP (Exact same physics lamp fixture as Jotter) */}
       <aside

@@ -137,11 +137,12 @@ export const PORTFOLIO_DATA: PortfolioData = {
         location: 'Victoria Island, Lagos',
         period: 'April 2024 — July 2025',
         highlight:
-          'Digitized operational workflows and employee lifecycle systems.',
+          'Contributed to Trace (Technology Rails for African Commodity Exchange) and operational digitization.',
         details: [
-          'Mapped operational HR workflows and authored comprehensive technical requirements.',
-          'Digitized employee onboarding, ID card generation, and offboarding pipelines.',
-          'Coordinated cross-functional development across design, QA, and engineering squads.',
+          'Authored comprehensive product documentation covering platform features, user roles, workflows, and functional requirements for Trace mineral supply chain rails.',
+          'Documented end-to-end user journeys across 6 platform roles (Suppliers, Samplers, Labs, Delivery Trackers, Meta-Aggregators, Admins).',
+          'Managed development sprints and tracked engineering deliverables across ClickUp, Notion, and Azure DevOps.',
+          'Bridged business requirements and engineering implementation, clarifying edge cases, investigating bugs, and coordinating issue resolution.',
         ],
       },
       {
@@ -198,6 +199,50 @@ export const PORTFOLIO_DATA: PortfolioData = {
     ],
   },
   projects: [
+    {
+      id: 'trace',
+      title: 'Trace Minerals',
+      tagline:
+        'Bringing structure and transparency to mineral trading operations.',
+      roleLabel: 'Product Manager',
+      roleDescription:
+        'Junior Product Manager at Sabi: mapped user journeys, wrote PRDs and functional requirements, organized sprint activities, and coordinated implementation with engineering and operations teams.',
+      period: 'April 2024 – July 2025',
+      metrics:
+        'Supported the development and delivery of multi-role digital workflows across supply, quality testing, logistics, and transactions.',
+      stack: [
+        'Product Documentation',
+        'PRDs & User Stories',
+        'ClickUp',
+        'Azure DevOps',
+        'User Journey Mapping',
+        'Backlog Management',
+        'QA & Testing',
+      ],
+      isMobile: false,
+      image: '',
+      images: [
+        {
+          src: '/assets/images/trace-preview.svg',
+          caption:
+            'Trace Minerals: Connecting suppliers, testing laboratories, logistics operators, and buyers',
+        },
+      ],
+      caseStudy: {
+        problem:
+          'Mineral trading involves multiple parties, each responsible for different parts of a transaction. Managing these activities across disconnected processes made it difficult to maintain accurate records, coordinate operations, and track transactions.',
+        solution:
+          'Trace aimed to bring these workflows into one platform, covering mineral supply, quality testing, logistics, and transactions. As Junior Product Manager, I translated real-world workflows into clear PRDs, organized sprint backlogs, and worked closely with engineers and operations to deliver coordinated digital modules.',
+        myImpact: [
+          'Writing PRDs and documenting feature requirements',
+          'Creating user stories and acceptance criteria',
+          'Mapping user journeys and defining role-based permissions',
+          'Breaking larger requirements into smaller development tasks',
+          'Managing backlogs and tracking sprint activities in ClickUp and Azure DevOps',
+          'Clarifying requirements and testing completed features against documented expectations',
+        ],
+      },
+    },
     {
       id: 'tnbc',
       title: 'The New Breed Church Back Office',
@@ -295,138 +340,138 @@ export const PORTFOLIO_DATA: PortfolioData = {
     //     ],
     //   },
     // },
-    {
-      id: 'tsems',
-      title: 'Tsems',
-      tagline:
-        'Mobile meal planner and recipe organizer for fitness goals and weekly planning.',
-      roleLabel: 'Engineer',
-      roleDescription:
-        'End-to-end product definition, UI design, and full-stack implementation.',
-      period: '2024',
-      metrics:
-        'Reduced weekly meal planning time from 45 mins to under 8 mins in beta.',
-      stack: [
-        'React',
-        'TypeScript',
-        'Express',
-        'Drizzle',
-        'PostgreSQL',
-        'Supabase',
-      ],
-      isMobile: true,
-      image: '/assets/images/tsems-1.png',
-      images: [
-        {
-          src: '/assets/images/tsems-1.png',
-          caption: 'Screen 1: Meal Activity & Saved Meal Library',
-          isMobile: true,
-        },
-        {
-          src: '/assets/images/tsems-2.png',
-          caption: 'Screen 2: Recipe Detail, Ingredients & Cooking Notes',
-          isMobile: true,
-        },
-      ],
-      caseStudy: {
-        problem:
-          'People, especially those with fitness goals, often struggle with deciding what to eat. Even when they already know meals they enjoy, it can be hard to keep track of them and plan what to eat throughout the week.',
-        solution:
-          "Built Tsems to help users save and organize their meals, find what they want to eat quickly, and create weekly meal plans. The product can later use AI to recommend meals based on a user's goals and available ingredients.",
-        myImpact: [
-          'Defined the problem, MVP, and main features for Tsems',
-          'Designed the user flow and planned how meals, ingredients, and meal plans would work together',
-          'Created a roadmap from a simple meal library to weekly meal planning and future AI features',
-        ],
-      },
-    },
-    {
-      id: 'landmark-ai',
-      title: 'Landmark Customer Service AI Agent',
-      tagline:
-        'An AI customer service assistant that helps customers book, request refunds, reschedule, and ask questions.',
-      roleLabel: 'Product Manager',
-      roleDescription:
-        'Led product direction and defined how the AI assistant should handle customer requests, working closely with engineering and business teams.',
-      period: '2024',
-      metrics:
-        'Handled 78% of routine customer requests automatically in sub-2 seconds.',
-      stack: [
-        'RAG',
-        'AI Orchestration',
-        'LLMs',
-        'Python',
-        'FastAPI',
-        'APIs',
-        'Figma',
-      ],
-      isMobile: false,
-      image: '',
-      images: [],
-      caseStudy: {
-        problem:
-          'Customers had to manually search through websites or wait for customer support to handle basic tasks like making bookings, asking for refunds, or changing dates.',
-        solution:
-          'Built an AI customer service agent that understands what customers need and uses AI to answer questions accurately and complete actions automatically.',
-        myImpact: [
-          'Defined customer requests and mapped out how the AI agent should respond',
-          'Wrote user stories and product requirements for basic and complex user flows',
-          'Worked with engineers to make sure the AI retrieved correct answers and triggered the right actions',
-          'Tested and validated the assistant to ensure answers were helpful, accurate, and reliable',
-        ],
-      },
-    },
-    {
-      id: 'solar-risk',
-      title: 'AI Solar Risk Prediction System',
-      tagline:
-        'An AI system that spots potential risks and issues with solar energy installations before expensive breakdowns happen.',
-      roleLabel: 'Product Manager',
-      roleDescription:
-        'Led product discovery and definition, working with AI researchers and software engineers to turn machine learning predictions into easy-to-use tools.',
-      period: '2024',
-      metrics:
-        'Identified early equipment warning signals to prevent costly solar installation downtime.',
-      stack: [
-        'Machine Learning',
-        'Python',
-        'AI/ML models',
-        'FastAPI',
-        'APIs',
-        'PostgreSQL',
-      ],
-      isMobile: true,
-      image: '/assets/images/raas-2.png',
-      images: [
-        {
-          src: '/assets/images/raas-2.png',
-          caption: 'Screen 1: Dashboard',
-          isMobile: true,
-        },
-        {
-          src: '/assets/images/raas-3.png',
-          caption: 'Screen 2: AI Diagnosis',
-          isMobile: true,
-        },
-        {
-          src: '/assets/images/raas-4.png',
-          caption: 'Screen 3: Weather Risk & Recommendations',
-          isMobile: true,
-        },
-      ],
-      caseStudy: {
-        problem:
-          'Solar energy systems can develop hidden issues that are hard to spot early, leading to unexpected equipment damage and high repair costs.',
-        solution:
-          'Created an AI-powered risk prediction tool that warns operators about potential problems early so they can fix them before failure.',
-        myImpact: [
-          'Researched how solar teams assess risk to understand what data and alerts matter most',
-          'Defined product requirements and simple dashboard screens for viewing risk alerts',
-          'Worked with AI/ML engineers to translate complex prediction data into clear, actionable advice',
-          'Ensured users could easily understand risk scores and take preventive action',
-        ],
-      },
-    },
+    // {
+    //   id: 'tsems',
+    //   title: 'Tsems',
+    //   tagline:
+    //     'Mobile meal planner and recipe organizer for fitness goals and weekly planning.',
+    //   roleLabel: 'Engineer',
+    //   roleDescription:
+    //     'End-to-end product definition, UI design, and full-stack implementation.',
+    //   period: '2024',
+    //   metrics:
+    //     'Reduced weekly meal planning time from 45 mins to under 8 mins in beta.',
+    //   stack: [
+    //     'React',
+    //     'TypeScript',
+    //     'Express',
+    //     'Drizzle',
+    //     'PostgreSQL',
+    //     'Supabase',
+    //   ],
+    //   isMobile: true,
+    //   image: '/assets/images/tsems-1.png',
+    //   images: [
+    //     {
+    //       src: '/assets/images/tsems-1.png',
+    //       caption: 'Screen 1: Meal Activity & Saved Meal Library',
+    //       isMobile: true,
+    //     },
+    //     {
+    //       src: '/assets/images/tsems-2.png',
+    //       caption: 'Screen 2: Recipe Detail, Ingredients & Cooking Notes',
+    //       isMobile: true,
+    //     },
+    //   ],
+    //   caseStudy: {
+    //     problem:
+    //       'People, especially those with fitness goals, often struggle with deciding what to eat. Even when they already know meals they enjoy, it can be hard to keep track of them and plan what to eat throughout the week.',
+    //     solution:
+    //       "Built Tsems to help users save and organize their meals, find what they want to eat quickly, and create weekly meal plans. The product can later use AI to recommend meals based on a user's goals and available ingredients.",
+    //     myImpact: [
+    //       'Defined the problem, MVP, and main features for Tsems',
+    //       'Designed the user flow and planned how meals, ingredients, and meal plans would work together',
+    //       'Created a roadmap from a simple meal library to weekly meal planning and future AI features',
+    //     ],
+    //   },
+    // },
+    // {
+    //   id: 'landmark-ai',
+    //   title: 'Landmark Customer Service AI Agent',
+    //   tagline:
+    //     'An AI customer service assistant that helps customers book, request refunds, reschedule, and ask questions.',
+    //   roleLabel: 'Product Manager',
+    //   roleDescription:
+    //     'Led product direction and defined how the AI assistant should handle customer requests, working closely with engineering and business teams.',
+    //   period: '2024',
+    //   metrics:
+    //     'Handled 78% of routine customer requests automatically in sub-2 seconds.',
+    //   stack: [
+    //     'RAG',
+    //     'AI Orchestration',
+    //     'LLMs',
+    //     'Python',
+    //     'FastAPI',
+    //     'APIs',
+    //     'Figma',
+    //   ],
+    //   isMobile: false,
+    //   image: '',
+    //   images: [],
+    //   caseStudy: {
+    //     problem:
+    //       'Customers had to manually search through websites or wait for customer support to handle basic tasks like making bookings, asking for refunds, or changing dates.',
+    //     solution:
+    //       'Built an AI customer service agent that understands what customers need and uses AI to answer questions accurately and complete actions automatically.',
+    //     myImpact: [
+    //       'Defined customer requests and mapped out how the AI agent should respond',
+    //       'Wrote user stories and product requirements for basic and complex user flows',
+    //       'Worked with engineers to make sure the AI retrieved correct answers and triggered the right actions',
+    //       'Tested and validated the assistant to ensure answers were helpful, accurate, and reliable',
+    //     ],
+    //   },
+    // },
+    // {
+    //   id: 'solar-risk',
+    //   title: 'AI Solar Risk Prediction System',
+    //   tagline:
+    //     'An AI system that spots potential risks and issues with solar energy installations before expensive breakdowns happen.',
+    //   roleLabel: 'Product Manager',
+    //   roleDescription:
+    //     'Led product discovery and definition, working with AI researchers and software engineers to turn machine learning predictions into easy-to-use tools.',
+    //   period: '2024',
+    //   metrics:
+    //     'Identified early equipment warning signals to prevent costly solar installation downtime.',
+    //   stack: [
+    //     'Machine Learning',
+    //     'Python',
+    //     'AI/ML models',
+    //     'FastAPI',
+    //     'APIs',
+    //     'PostgreSQL',
+    //   ],
+    //   isMobile: true,
+    //   image: '/assets/images/raas-2.png',
+    //   images: [
+    //     {
+    //       src: '/assets/images/raas-2.png',
+    //       caption: 'Screen 1: Dashboard',
+    //       isMobile: true,
+    //     },
+    //     {
+    //       src: '/assets/images/raas-3.png',
+    //       caption: 'Screen 2: AI Diagnosis',
+    //       isMobile: true,
+    //     },
+    //     {
+    //       src: '/assets/images/raas-4.png',
+    //       caption: 'Screen 3: Weather Risk & Recommendations',
+    //       isMobile: true,
+    //     },
+    //   ],
+    //   caseStudy: {
+    //     problem:
+    //       'Solar energy systems can develop hidden issues that are hard to spot early, leading to unexpected equipment damage and high repair costs.',
+    //     solution:
+    //       'Created an AI-powered risk prediction tool that warns operators about potential problems early so they can fix them before failure.',
+    //     myImpact: [
+    //       'Researched how solar teams assess risk to understand what data and alerts matter most',
+    //       'Defined product requirements and simple dashboard screens for viewing risk alerts',
+    //       'Worked with AI/ML engineers to translate complex prediction data into clear, actionable advice',
+    //       'Ensured users could easily understand risk scores and take preventive action',
+    //     ],
+    //   },
+    // },
   ],
   quotes: [
     {
