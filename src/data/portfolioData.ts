@@ -245,15 +245,15 @@ export const PORTFOLIO_DATA: PortfolioData = {
     },
     {
       id: 'tnbc',
-      title: 'The New Breed Church Back Office',
+      title: 'The New Breed Church — Back Office',
       tagline:
-        'A church management platform for managing members, attendance, giving, and church activities in one place.',
-      roleLabel: 'Engineer',
+        'A unified platform for church administration, member management, and QR-based attendance.',
+      roleLabel: 'Product Manager, Designer & Engineer',
       roleDescription:
-        'Led product thinking and contributed to the design and development of a church management platform, translating church operations into practical digital workflows.',
+        'Took the product from an operational need to a working solution over a three-month build: shaped requirements, designed the user experience, and contributed to full-stack engineering.',
       period: '2023',
       metrics:
-        'Consolidated 6 disparate paper/spreadsheet systems into 1 digital workflow.',
+        'Adopted for active operations across 964 members and 122 church workers.',
       stack: [
         'React',
         'Python',
@@ -278,19 +278,27 @@ export const PORTFOLIO_DATA: PortfolioData = {
         },
         {
           src: '/assets/images/tnbc-3.png',
-          caption: 'Screen 3: Member Directory',
+          caption: 'Screen 3: Dashboard Geos',
         },
         {
           src: '/assets/images/tnbc-4.png',
-          caption: 'Screen 4: Prayer Requests',
+          caption: 'Screen 4: Members',
         },
         {
           src: '/assets/images/tnbc-5.png',
-          caption: 'Screen 5: Audit Log',
+          caption: 'Screen 5: Givings',
         },
         {
           src: '/assets/images/tnbc-6.png',
-          caption: 'Screen 5: Roles and Permissions',
+          caption: 'Screen 6: Audit Log',
+        },
+        {
+          src: '/assets/images/tnbc-7.png',
+          caption: 'Screen 7: Roles and Permissions',
+        },
+        {
+          src: '/assets/images/tnbc-8.png',
+          caption: 'Screen 8: Roles and Permissions',
         },
       ],
       caseStudy: {

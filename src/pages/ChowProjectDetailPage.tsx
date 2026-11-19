@@ -20,6 +20,7 @@ import {
   type FullscreenImageState,
 } from '@/components/FullscreenLightboxModal'
 import { TraceDeepDiveCaseStudy } from '@/components/TraceDeepDiveCaseStudy'
+import { TnbcDeepDiveCaseStudy } from '@/components/TnbcDeepDiveCaseStudy'
 
 function getEmbedUrl(url?: string): string | null {
   if (!url) return null
@@ -226,10 +227,113 @@ export function ChowProjectDetailPage() {
         </header>
 
         {/* =========================================================================
-            2. EDITORIAL CONTEXT NARRATIVE OR DEDICATED PM DEEP DIVE
+            2. PRODUCT SCREENS CAROUSEL (Showcased at the top right beneath header)
+           ========================================================================= */}
+        {project.id !== 'trace' && hasImages && project.images && (
+          <section className="space-y-4 pt-2">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-[#1B4332] dark:bg-[#52B788] border border-[#0E2233] shrink-0" />
+                <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
+                  Product Screens
+                </h2>
+              </div>
+
+              <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setActiveImageIndex((prev) =>
+                        prev > 0 ? prev - 1 : project.images!.length - 1
+                      )
+                    }
+                    className="p-2 rounded-xl border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-white dark:bg-[#122436] text-[#0E2233] dark:text-white hover:bg-[#D8F3DC] dark:hover:bg-[#1B4332] shadow-[2px_2px_0_#0E2233] dark:shadow-[2px_2px_0_#143829] cursor-pointer"
+                    title="Previous Screen"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <span className="text-xs font-extrabold px-2 text-[#0E2233] dark:text-white whitespace-nowrap">
+                    {activeImageIndex + 1} / {project.images.length}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setActiveImageIndex(
+                        (prev) => (prev + 1) % project.images!.length
+                      )
+                    }
+                    className="p-2 rounded-xl border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-white dark:bg-[#122436] text-[#0E2233] dark:text-white hover:bg-[#D8F3DC] dark:hover:bg-[#1B4332] shadow-[2px_2px_0_#0E2233] dark:shadow-[2px_2px_0_#143829] cursor-pointer"
+                    title="Next Screen"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative rounded-2xl border-3 border-[#0E2233] dark:border-[#2D6A4F] overflow-hidden bg-[#EAF1F8] dark:bg-[#122436] shadow-[8px_8px_0_#0E2233] dark:shadow-[8px_8px_0_#143829] group">
+              <img
+                src={project.images[activeImageIndex].src}
+                alt={
+                  project.images[activeImageIndex].caption ||
+                  `${project.title} screenshot`
+                }
+                className="w-full h-auto max-h-[580px] object-contain mx-auto transition-transform duration-300"
+              />
+
+              <button
+                type="button"
+                onClick={() =>
+                  setFullscreenImage({
+                    src: project.images![activeImageIndex].src,
+                    caption: project.images![activeImageIndex].caption,
+                  })
+                }
+                className="absolute top-4 right-4 p-2.5 rounded-xl border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-white dark:bg-[#122436] text-[#0E2233] dark:text-white shadow-[3px_3px_0_#0E2233] dark:shadow-[3px_3px_0_#143829] opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 font-bold text-xs cursor-pointer"
+              >
+                <ZoomIn className="w-4 h-4" />
+                <span>Enlarge</span>
+              </button>
+
+              {project.images[activeImageIndex].caption && (
+                <div className="p-4 border-t-2.5 border-[#0E2233] dark:border-[#2D6A4F] bg-[#1B4332] text-[#D8F3DC] font-bold text-xs sm:text-sm">
+                  {project.images[activeImageIndex].caption}
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* =========================================================================
+            3. EDITORIAL CONTEXT NARRATIVE OR DEDICATED PM DEEP DIVE
            ========================================================================= */}
         {project.id === 'trace' ? (
           <TraceDeepDiveCaseStudy />
+        ) : project.id === 'tnbc' ? (
+          <div className="space-y-12">
+            <TnbcDeepDiveCaseStudy />
+
+            {/* Core Architecture & Tech Stack */}
+            <div className="space-y-3 pt-4 border-t-2 border-[#0E2233]/15 dark:border-white/15">
+              <div className="flex items-center gap-3">
+                <span className="w-3.5 h-3.5 rounded-full border-2 border-[#1B4332] dark:border-[#52B788] bg-transparent inline-block shrink-0" />
+                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
+                  Core Architecture &amp; Tech Stack
+                </h2>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 pl-6">
+                {project.stack.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3.5 py-1.5 rounded-full border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-white dark:bg-[#122436] text-[#0E2233] dark:text-[#EAF1F8] font-extrabold text-xs shadow-[2px_2px_0_#0E2233] dark:shadow-[2px_2px_0_#143829]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         ) : (
           <section className="space-y-10 pt-4">
             {/* 1. The Operational Problem */}
@@ -344,85 +448,6 @@ export function ChowProjectDetailPage() {
                 allowFullScreen
                 className="w-full h-full border-0"
               />
-            </div>
-          </section>
-        )}
-
-        {/* =========================================================================
-            4. SCREENSHOT CAROUSEL SHOWCASE (Hidden if project has no real screenshots)
-           ========================================================================= */}
-        {project.id !== 'trace' && hasImages && project.images && (
-          <section className="space-y-4 pt-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-[#1B4332] dark:bg-[#52B788] border border-[#0E2233] shrink-0" />
-                <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#0E2233] dark:text-white">
-                  Product Screens
-                </h2>
-              </div>
-
-              <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setActiveImageIndex((prev) =>
-                        prev > 0 ? prev - 1 : project.images!.length - 1
-                      )
-                    }
-                    className="p-2 rounded-xl border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-white dark:bg-[#122436] text-[#0E2233] dark:text-white hover:bg-[#D8F3DC] dark:hover:bg-[#1B4332] shadow-[2px_2px_0_#0E2233] dark:shadow-[2px_2px_0_#143829] cursor-pointer"
-                    title="Previous Screen"
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-                  <span className="text-xs font-extrabold px-2 text-[#0E2233] dark:text-white whitespace-nowrap">
-                    {activeImageIndex + 1} / {project.images.length}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setActiveImageIndex(
-                        (prev) => (prev + 1) % project.images!.length
-                      )
-                    }
-                    className="p-2 rounded-xl border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-white dark:bg-[#122436] text-[#0E2233] dark:text-white hover:bg-[#D8F3DC] dark:hover:bg-[#1B4332] shadow-[2px_2px_0_#0E2233] dark:shadow-[2px_2px_0_#143829] cursor-pointer"
-                    title="Next Screen"
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative rounded-2xl border-3 border-[#0E2233] dark:border-[#2D6A4F] overflow-hidden bg-[#EAF1F8] dark:bg-[#122436] shadow-[8px_8px_0_#0E2233] dark:shadow-[8px_8px_0_#143829] group">
-              <img
-                src={project.images[activeImageIndex].src}
-                alt={
-                  project.images[activeImageIndex].caption ||
-                  `${project.title} screenshot`
-                }
-                className="w-full h-auto max-h-[580px] object-contain mx-auto transition-transform duration-300"
-              />
-
-              <button
-                type="button"
-                onClick={() =>
-                  setFullscreenImage({
-                    src: project.images![activeImageIndex].src,
-                    caption: project.images![activeImageIndex].caption,
-                  })
-                }
-                className="absolute top-4 right-4 p-2.5 rounded-xl border-2 border-[#0E2233] dark:border-[#2D6A4F] bg-white dark:bg-[#122436] text-[#0E2233] dark:text-white shadow-[3px_3px_0_#0E2233] dark:shadow-[3px_3px_0_#143829] opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 font-bold text-xs cursor-pointer"
-              >
-                <ZoomIn className="w-4 h-4" />
-                <span>Enlarge</span>
-              </button>
-
-              {project.images[activeImageIndex].caption && (
-                <div className="p-4 border-t-2.5 border-[#0E2233] dark:border-[#2D6A4F] bg-[#1B4332] text-[#D8F3DC] font-bold text-xs sm:text-sm">
-                  {project.images[activeImageIndex].caption}
-                </div>
-              )}
             </div>
           </section>
         )}
